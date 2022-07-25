@@ -12,16 +12,17 @@ body {
   top: 50%;
   left: 76%;
   width: 24vw;
-  padding: 15px;
+  padding: 17px;
+
   transform: translate(-50%, -50%);
-  background: rgb(91, 90, 90);
+  background: rgb(215, 8, 8);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
 }
 
-.login-box h4{
-  margin: 0 0 30px;
+.login-box h5{
+margin-bottom: 30px;
   padding: 0;
   color: #fff;
   text-align: center;
@@ -69,7 +70,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 12px;
 }
 
-.login-box form #btnsubmit {
+.login-box form #btnlogin {
   position: relative;
   display: inline-block;
   padding: 5px 10px;
@@ -78,7 +79,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-decoration: none;
   overflow: hidden;
   transition: 1.5s;
-  margin-top: 5%;
+  margin-top: 6%;
   letter-spacing: 2px;
    background: rgb(242, 242, 247);
   border-radius: 7px;
@@ -110,14 +111,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-#rtologin{
+#rtosignup{
 
   text-decoration: none;
   right: 5%;
   top: 5%;
   position: absolute;
   padding: 10px;
-  background-color: rgba(8, 8, 236, 0.886);
+  background-color: rgba(6, 150, 6, 0.886);
   color: #fefefe;
   border-radius: 6px;
   

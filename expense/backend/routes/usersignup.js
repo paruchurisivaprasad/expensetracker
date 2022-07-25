@@ -4,6 +4,7 @@ let Controllers=require('../controllers/signuplogin');
 
 
 router.post('/register',Controllers.postuserdata);
+router.post('/login',Controllers.postlogin);
 
 
 

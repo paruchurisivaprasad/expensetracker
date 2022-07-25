@@ -28,7 +28,17 @@ btnsubmit.addEventListener('click',(e)=>{
     axios
       .post("http://localhost:8400/register",obj)
       .then((result) => {
-        console.log(result);
+
+        if(result.data.suc==true){
+          alert("sign up  completed ! please login into your account")
+        }
+        else{
+  if(result.data.errors[0].message=='phonenumber must be unique'||'email must be unique'){
+    alert("user already exist ! please login")
+  }
+        
+              }
+
       })
       .catch((err) => {
         console.log(err);

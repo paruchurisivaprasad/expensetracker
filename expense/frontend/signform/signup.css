@@ -1,0 +1,110 @@
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 76%;
+  width: 26vw;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  background: rgb(91, 90, 90);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h4{
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 17px;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .3s;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #fefefe;
+  font-size: 12px;
+}
+
+.login-box form #btnsubmit {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 1.5s;
+  margin-top: 4%;
+  letter-spacing: 2px;
+   background: rgb(242, 242, 247);
+  border-radius: 7px;
+  border: none;
+  margin-left: 32%;
+
+}
+
+
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+#welcomeotoexpense{
+    padding: 30px;
+    margin-top: 10%;
+    color: rgb(4, 4, 235);
+}

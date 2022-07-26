@@ -18,8 +18,9 @@ btnsubmit.addEventListener('click',(e)=>{
   .then(result=>{
     if(result.data.msg=='login successful'){
       localStorage.setItem('token',result.data.token);
-      window.location.replace('../homepage/home.html');
+      window.open('../homepage/home.html');
     }
+    
   })
   .catch(err=>{
   console.log(err);

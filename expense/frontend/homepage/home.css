@@ -1,12 +1,273 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+#nav{
+  background-color: rgb(229, 104, 15);
+  padding: 7px;
+  display: flex;
+  width: 100%;
+
+}
+#user{
+  display: flex;
+
+}
+#userwelcome{
+margin-left: 56vw;
+color: whitesmoke;
+letter-spacing: 2px;
+}
+.userdetail{
+  margin-left: 1%;
+  color: white;
+}
+.wel{
+  color: rgb(247, 249, 249);
+  margin-left: 10px;
+}
+#regform{
+
+  margin-top: 20px;
+  width: 85%;
+  margin: auto;
+  padding: 15px;
+  background-color: rgb(195, 193, 193);
+  margin-top: 40px;
+
+}
+.fa-caret-down{
+  color: white;
+  margin-left: 2%;
+  margin-top: 12px;
+  cursor: pointer;
+}
+#dropshow{
+  
+  color: white;
+  margin-left: 2%;
+  cursor: pointer;
+
+}
+#buysub{
+  border: none;
+  background-color: white;
+}
+.adex{
+  margin-bottom: 20px;
+  margin-left: 3%;
+  color: rgb(241, 78, 8);
+}
+#category{
+font-weight: 550;
+    margin-inline: 15px;
+    width: 15%;
+      border: none;
+  outline: none;
+padding: 5px;}
+#description{
+  font-weight: 550;
+
+  margin-inline: 20px;
+  border: none;
+  outline: none;
+  padding: 7px;
+  width: 27vw;
+}
+#amount{
+  font-weight: 550;
+
+    margin-inline: 30px;
+    width: 17%;
+      border: none;
+  outline: none;
+padding: 5px;
+
+
+}
+#addexpensebtn{
+  border: none;
+  background-color: rgb(213, 94, 9);
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  margin-left: 2vw;
+}
+option{
+}
+select{
+  
+}
+option:hover{
+  background-color: blue;
+  color: white;
+}
+
+#expensebox{
+  width: 85%;
+  margin: auto;
+    margin-top: 50px;
+
+
+  background-color: white;
+  padding: 20px;
+  border: 2px outset darkgray;
+}
+.singleexpense{
+  width: 90%;
+  background-color: white;
+  margin: auto;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 4px;
+}
+.exphead{
+  
+  width: 90%;
+  background-color: white;
+  margin: auto;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 4px;
+
+}
+.exphead1{
+  margin-right: 8vw;
+  font-size: 20px;
+  font-weight: 500;
+}
+.exphead2{
+    margin-right: 8vw;
+    
+  font-size: 20px;
+  font-weight: 500;
+  
+}
+.exphead3{
+  
+  font-size: 20px;
+  font-weight: 500;
+
+
+}
+
+#alertpopup{
+    position:fixed;
+    top: 45px;
+    right:50%;
+}
+.notification {
+    background-color: rgb(236, 4, 47);
+    border-radius: 5px;
+    color: white;
+    padding: 0.7rem;
+    margin: 1rem;
+}
+
+.ifempty{
+    position:fixed;
+    top: 45px;
+    right:50%;
+}
+.alertempty {
+    background-color: rgb(236, 4, 47);
+    border-radius: 5px;
+    color: white;
+    padding: 0.7rem;
+    margin: 1rem;
+}
+.gprice{
+  
+  margin-right: 10vw;
+  font-size: 20px;
+  font-weight: 500;
+
+}
+.gcategory{
+  margin-right: 8vw;
+    
+  font-size: 20px;
+  font-weight: 500;
+  
+
+}
+.gdescription{
+    font-size: 20px;
+  font-weight: 500;
+
+}
+
+.droplist{
+  list-style: none;
+
+}
+.droplist li{
+  margin-top: 10px;
+  cursor: pointer;
+}
+.droplist li a{
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+.dropoptions{
+  background-color: white;
+  border: 1.5px solid black;
+  width: 12vw;
+  padding: 0px;
+  float: right;
+  margin-right:10px ;
+  display: none;
+
+
+}
+
+
+
+
+  @media screen and (max-width: 480px) {
+  
+    #regform{
+      width: 85%;
+      display: grid;
+      place-items: center;
+
+    }
+    .adex{
+      margin-bottom: 40px;
+    }
+    #category{
+      width: 95%;
+      margin-bottom: 13px;
+    }
+    #description{
+      width: 95%;
+            margin-bottom: 23px;
+
+    }
+    #amount{
+      width: 95%;
+            margin-bottom: 13px;
+
+    }
+}
+
+
+
+
+/* 
 #regform{
     width: 25vw;
     display: grid;
     place-items: center;
-    background-color:rgb(155, 150, 150);
+    background-color:whitesmoke;
     padding: 10px;
     margin: auto;
     border: 2px solid rgb(21, 17, 17);
     margin-top: 3%;
+    border-radius: 15px;
 }
 #amount{
 width: 100%;
@@ -15,12 +276,11 @@ width: 100%;
   color: black;
   margin-bottom: 17px;
   border: none;
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid black;
   outline: none;
   background: transparent;
   text-decoration: none;
   padding: 10px;
-background-color:white;
 font-weight: 500;
 }
   #description{
@@ -31,11 +291,10 @@ font-weight: 500;
   color: rgb(10, 2, 2);
   margin-bottom: 17px;
   border: none;
-  border-bottom: 3px solid whitesmoke;
+  border-bottom: 2px solid rgb(20, 15, 15);
   outline: none;
   background: transparent;
   text-decoration: none;
-  background-color: rgb(251, 253, 255);
   padding: 10px;
 
   }
@@ -48,22 +307,39 @@ font-weight: 500;
   color: rgb(10, 2, 2);
   margin-bottom: 17px;
   border: none;
-  border-bottom: 3px solid whitesmoke;
+  border-bottom: 2px solid rgb(25, 18, 18);
   outline: none;
   background: transparent;
   text-decoration: none;
-  background-color: rgb(251, 253, 255);
   padding: 10px;
   }
 
   #a1{
     margin-bottom: 20px;
-    color: rgb(247, 247, 252);
+    color: dimgray;
   }
   #addexpensebtn{
+    margin-top: 15px;
     border: none;
     padding: 7px;
-    background-color: white;
-    font-size: 20px;
+      background-color: rgba(101, 101, 101);
+    font-size: 21px;
+    font-weight: 400;
     border-radius: 7px;
+    color: white;
   }
+
+    #addexpensebtn:hover{
+
+    }
+  @media screen and (max-width: 480px) {
+  
+    #regform{
+      width: 85%;
+
+    }
+    
+}
+
+
+*/

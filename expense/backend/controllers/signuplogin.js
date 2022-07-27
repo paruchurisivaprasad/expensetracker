@@ -43,7 +43,7 @@ exports.postlogin = async (req, res) => {
 
 
     if (emailpwdmatch) {
-      const token = jwt.sign(dbid, process.env.secretkey);
+      const token = jwt.sign(dbid, ammananna);
       res.status(200).json({ msg: "login successful", token: token });
     } else {
       res.status(401).json({ msg: "something went wrong" });

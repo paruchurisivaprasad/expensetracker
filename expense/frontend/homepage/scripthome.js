@@ -11,6 +11,13 @@ let ifempty=document.querySelector('.ifempty');
 let logout=document.querySelector('#logout');
 let dropshow=document.querySelector('#dropshow');
 let subscriptionbtn=document.querySelector('#buysub');
+let hidedrop = document.querySelector("#hidedrop");
+let body = document.querySelector("body");
+let subfeature = document.querySelector(".subfeatures");
+let whitetheme=document.querySelector('#whitetheme');
+
+
+
 addexpensebtn.addEventListener('click',(e)=>{
     let token = localStorage.getItem("token");
 
@@ -56,9 +63,9 @@ axios.get("http://localhost:8400/getuserdata",{ headers: {"authorization" : toke
 
 if(result.data.suc=='yes'){
 
-    userdeatail.innerHTML = result.data.result[0].name.split(" ")[0];
-    
+    userdeatail.innerHTML = result.data.result[0].name.split(" ")[0]; 
 }
+ 
 
 })
 .then(err=>{
@@ -131,13 +138,42 @@ logout.addEventListener('click',()=>{
 
 });
 
-let body=document.querySelector('body');
 dropshow.addEventListener('click',(e)=>{ 
 dropoptions.style.display='block';
 });
-dropshow.addEventListener('dblclick',()=>{
-dropoptions.style.display = "none";
+hidedrop.addEventListener("click", () => {
+  dropoptions.style.display = "none";
+});
 
+document.addEventListener("DOMContentLoaded", () => {
+  let token = localStorage.getItem("token");
+
+  axios
+    .get("http://localhost:8400/getuserdata", {
+      headers: { authorization: token },
+    })
+    .then((result) => {
+      if (result.data.result[0].issubcribed == true) {
+        subfeature.innerHTML = `
+     <li class="text-dark" id="subscriptiontheme" >dark gray theme</li>
+                  <li><a href="../leaderboard/board.html" id="leaderboard">leaderboard</a></li>
+             <li><a href="../reportpage/report.html" id="report">report</a></li>
+
+        `;
+
+        let subscriptiontheme = document.querySelector("#subscriptiontheme");
+        let leaderboard = document.querySelector("#leaderboard");
+        let report = document.querySelector("#report");
+
+        subscriptiontheme.addEventListener("click", () => {
+          body.style.backgroundColor='darkgray';
+        });
+
+      }
+    })
+    .then((err) => {
+      console.log(err);
+    });
 });
 
 
@@ -157,13 +193,13 @@ async function buySubscription(e){
           order_id: response.data.order.id, // For one time payment
           prefill: {
             name: "siva ",
-            email: "siva.user@example.com",
+            email: "siva@example.com",
             contact: "9347633052",
           },
           theme: {
             color: "#528FF0",
           },
-          // This handler function will handle the success payment
+          //  handle the success payment
           handler: function (response) {
             console.log(response);
             axios

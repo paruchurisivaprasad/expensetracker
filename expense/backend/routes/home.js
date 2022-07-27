@@ -108,6 +108,32 @@ router.post("/updatetransaction", aut.authenticate, async (req, res) => {
   }
 });
 
+router.get("/leaderdata", aut.authenticate, async (req, res) => {
+  const totalAmount = await Expense.findAll({
+    attributes: [
+      "userId",
+      [Sequelize.fn("sum", Sequelize.col("amount")), "total_amount"],
+    ],
+    group: ["userId"],
+    raw: true,
+  });
+
+  totalAmount.sort((a, b) => b.total_amount - a.total_amount);
+
+  for (let i = 0; i < totalAmount.length; i++) {
+    let user = await User.findAll({
+      attributes: ["name"],
+      where: { id: totalAmount[i].userId },
+    });
+
+    //console.log(user[0].name)
+
+    totalAmount[i] = { ...totalAmount[i], name: user[0].name };
+  }
+
+  //console.log(totalAmount)
+  res.json( totalAmount);
+});
 
 
 

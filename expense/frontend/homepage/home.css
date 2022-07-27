@@ -58,11 +58,11 @@ letter-spacing: 2px;
 .adex{
   margin-bottom: 20px;
   margin-left: 3%;
-  color: rgb(241, 78, 8);
+  color: rgb(255, 110, 6);
 }
 #category{
 font-weight: 550;
-    margin-inline: 15px;
+    margin-inline: 5px;
     width: 15%;
       border: none;
   outline: none;
@@ -70,7 +70,7 @@ padding: 5px;}
 #description{
   font-weight: 550;
 
-  margin-inline: 20px;
+  margin-inline: 10px;
   border: none;
   outline: none;
   padding: 7px;
@@ -89,7 +89,7 @@ padding: 5px;
 }
 #addexpensebtn{
   border: none;
-  background-color: rgb(213, 94, 9);
+  background-color: rgb(255, 110, 6);
   color: white;
   padding: 8px;
   border-radius: 6px;
@@ -215,13 +215,21 @@ option:hover{
 .dropoptions{
   background-color: white;
   border: 1.5px solid black;
-  width: 12vw;
+  width: 13vw;
   padding: 0px;
   float: right;
-  margin-right:10px ;
+  margin-right:3% ;
   display: none;
 
 
+}
+#addexpensebtn:hover{
+  background-color: rgb(237, 102, 6);
+}
+#hidedrop{
+  margin-left: 8vw;
+  font-size: 20px;
+  color: red;
 }
 
 

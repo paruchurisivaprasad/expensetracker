@@ -1,0 +1,20 @@
+.mainbar{
+    background-color: rgb(89, 86, 84);
+    display: flex;
+    padding: 10px;
+}
+#home{
+    color: white;
+    text-decoration: none;
+    margin-left: 40%;
+}
+.logout{
+    color: red;
+    list-style: none;
+    font-weight: 600;
+    margin-left: 47%;
+    cursor: pointer;
+}
+.maincon{
+    width: 70%;
+}

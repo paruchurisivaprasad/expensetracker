@@ -8,6 +8,8 @@ const sequelize = require("./models/database");
 const User=require('./models/user');
 const Expense=require('./models/expense');
 let Order=require('./models/order');
+let ForgotPassword=require('./models/forgot');
+let resetrouter=require('./routes/reset');
 let app = express();
 
 app.use(bodyParser.json());
@@ -19,9 +21,12 @@ User.hasMany(Expense);
 Expense.belongsTo(User);
 User.hasMany(Order);
 Order.belongsTo(User);
+User.hasMany(ForgotPassword);
+ForgotPassword.belongsTo(User);
 
 app.use(SignUpLogin);
-app.use(homerouter)
+app.use(homerouter);
+app.use(resetrouter);
 
 
 

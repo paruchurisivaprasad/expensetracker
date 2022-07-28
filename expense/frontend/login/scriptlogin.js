@@ -23,7 +23,11 @@ btnsubmit.addEventListener('click',(e)=>{
     
   })
   .catch(err=>{
-  console.log(err);
+    if(err.response.status==404||401){
+
+      alert("user not found")
+
+    }
   })
 
 

@@ -9,22 +9,24 @@ body {
 
 .login-box {
   position: absolute;
-  top: 50%;
-  left: 76%;
+  top: 40%;
+  left: 50%;
   width: 24vw;
-  padding: 15px;
+  padding: 16px;
+
   transform: translate(-50%, -50%);
-  background: rgb(91, 90, 90);
+  background: rgb(122, 118, 119);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
 }
 
-.login-box h5{
-  margin: 0 0 30px;
+.login-box h6{
+margin-bottom: 30px;
   padding: 0;
-  color: #fff;
+  color: rgb(254, 252, 252);
   text-align: center;
+  font-size: smaller;
 }
 
 .login-box .user-box {
@@ -34,9 +36,9 @@ body {
 .login-box .user-box input {
   width: 100%;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 13px;
   color: #fff;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   border: none;
   border-bottom: 1px solid #ffffff;
   outline: none;
@@ -63,32 +65,31 @@ input[type=number]::-webkit-outer-spin-button {
 
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
-  top: -20px;
+  top: -22px;
   left: 0;
   color: #fefefe;
   font-size: 12px;
 }
 
-.login-box form #btnsubmit {
+.login-box form #btnlogin {
   position: relative;
   display: inline-block;
-  padding: 5px 10px;
-  color: black;
-  font-size: 20px;
+  padding: 5px 7px;
+  color: rgb(253, 250, 250);
+  font-size: 18px;
   text-decoration: none;
   overflow: hidden;
   transition: 1.5s;
-  letter-spacing: 2px;
-   background: rgb(242, 242, 247);
+  margin-top: 2%;
+  letter-spacing: 1px;
+   background: rgb(6, 208, 244);
   border-radius: 7px;
   border: none;
   margin-left: 32%;
+  cursor: pointer;
 
 }
 
-#signerup{
-  margin-top: 3%;
-}
 
 
 .login-box a span {
@@ -112,15 +113,34 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-#rtologin{
+#rtosignup{
 
   text-decoration: none;
   right: 5%;
   top: 5%;
   position: absolute;
   padding: 10px;
-  background-color: rgba(8, 8, 236, 0.886);
+  background-color: rgba(6, 150, 6, 0.886);
   color: #fefefe;
   border-radius: 6px;
   
+}
+#forgotpassword{
+  color: rgb(251, 6, 6);
+  margin-top: 15px;
+
+  float: right;
+  margin-top: 17%;
+  margin-right: 20%;
+  font-size: large;
+}
+#signer{
+  color: white;
+}
+.signer{
+  margin-top: 10px;
+}
+.pwdlink{
+    margin-top: 8%;
+    font-size: 23px;
 }

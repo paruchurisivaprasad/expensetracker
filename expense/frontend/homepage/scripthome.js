@@ -89,14 +89,15 @@ function getallexpenses(){
 
         for (let i = 0; i < result.data.result.length; i++) {
           let res = result.data.result[i];
+          console.log(res.id);
 
           allexp += `
-        <div class="singleexpense">
+        <div class="singleexpense" >
 
         <span class="gprice">${res.amount}</span>
         <span class="gcategory">${res.category}</span>
-        <span class="gdescription">${res.description}</span>
-        <button id=${res.id} style="background-color:red; float:right; color:white; border:none; padding:6px; margin-top:-8px;"><i class="fa-solid fa-trash"></i></button>
+        <span class="gdescription" style="font-size:14px;">${res.description}</span>
+        <button id="${res.id}"  style="background-color:red; float:right; color:white; border:none; padding:6px; margin-top:-8px;"><i class="fa-solid fa-trash"></i></button>
         </div>
         `;
         }
@@ -236,3 +237,23 @@ async function buySubscription(e){
     });
 
   }
+
+  expensedetails.addEventListener('click',(e)=>{
+    let token=localStorage.getItem('token');
+
+    if(e.target.classList.contains('fa-trash')){
+      let id = e.target.parentElement.id;
+      axios.delete(
+          `http://localhost:8400/delete/expense/${id}
+`,
+          { headers: { authorization: token } }
+        )
+        .then((result) => {
+          getallexpenses();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+console.log(e.target.parentElement.id);
+    }
+  })

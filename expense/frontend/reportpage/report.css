@@ -1,0 +1,29 @@
+.mainbar{
+    background-color: black;
+    display: flex;
+    padding: 11px;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#home{
+    color: white;
+    text-decoration: none;
+    margin-left: 40%;
+}
+.logout{
+    color: rgba(28, 223, 74, 0.724);
+    list-style: none;
+    font-weight: 600;
+    margin-left: 47%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.dailyexpense{
+    margin-bottom: 80px;
+}
+.weeklyexpense{
+    margin-bottom: 80px;
+}

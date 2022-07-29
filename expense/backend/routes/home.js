@@ -9,7 +9,7 @@ const router=express.Router();
 let bodyParser = require("body-parser");
 const Razorpay = require("razorpay");
 const Order = require("../models/order");
-
+const {Op}=require('sequelize');
 
 let c=0;
 router.use(bodyParser.json());
@@ -135,7 +135,77 @@ router.get("/leaderdata", aut.authenticate, async (req, res) => {
   res.json( totalAmount);
 });
 
+router.delete('/delete/expense/:id',aut.authenticate,(req,res)=>{
+  const id=req.params.id;
+  Expense.destroy({where:{id:id}})
+  .then(result=>{
+res.json(result)  })
+  .catch(err=>{
+res.json(err)  })
+});
 
+
+
+router.get('/daily/expenses',aut.authenticate,async (req,res)=>{
+
+      const today = new Date().setHours(0, 0, 0, 0);
+      const now = new Date();
+
+      req.user
+        .getExpenses({
+          where: {
+            createdAt: {
+              [Op.gt]: today,
+              [Op.lt]: now,
+            },
+          },
+        })
+        .then((result) => {
+          res.json(result);
+        });
+
+
+});
+
+
+router.get('/weekly/expenses',aut.authenticate,async(req,res)=>{
+  const todayDate = new Date().getDate();
+  const lastWeek = new Date().setDate(todayDate - 7);
+  const now = new Date();
+
+  req.user
+    .getExpenses({
+      where: {
+        createdAt: {
+          [Op.gt]: lastWeek,
+          [Op.lt]: now,
+        },
+      },
+    })
+    .then((result) => {
+      res.json(result);
+    });
+});
+
+router.get('/monthly/expenses',aut.authenticate,async (req,res)=>{
+
+      const month = new Date().getMonth();
+      const lastMonth = new Date().setMonth(month - 1);
+      const now = new Date();
+
+      req.user
+        .getExpenses({
+          where: {
+            createdAt: {
+              [Op.gt]: lastMonth,
+              [Op.lt]: now,
+            },
+          },
+        })
+        .then((result) => {
+          res.json(result);
+        });
+})
 
 module.exports=router;
 

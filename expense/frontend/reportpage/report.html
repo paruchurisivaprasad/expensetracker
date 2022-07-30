@@ -14,7 +14,6 @@
   <body>
     <div class="mainbar">
       <a href="../homepage/home.html" id="home">Home</a>
-      <li class="logout">Sign out</li>
     </div>
 
     <!--  -->
@@ -35,7 +34,10 @@
     
   </tbody>
 </table>
-
+<div class="tdaily">
+    <h5>Total</h5>
+    <div class="tdailytotal"></div>
+</div>
       </div>
       <div class="text-center">
               <canvas id="myChart"  ></canvas>
@@ -60,6 +62,11 @@
     
   </tbody>
 </table>
+<div class="wdaily">
+    <h5>Total</h5>
+    <div class="wdailytotal"></div>
+</div>
+
 
       </div>
             <div class="text-center ">
@@ -85,12 +92,23 @@
     
   </tbody>
 </table>
+<div class="mdaily">
+    <h5>Total</h5>
+    <div class="mdailytotal"></div>
+</div>
+
 
       </div>
             <div class="text-center ">
               <canvas id="myChart2"  ></canvas>
 
       </div>
+
+    </div>
+
+    <!--  download report -->
+    <div class="text-center my-5">
+          <button class="downloadstm text-center">download statement</button>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>

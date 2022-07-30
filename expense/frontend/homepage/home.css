@@ -109,8 +109,6 @@ option:hover{
   width: 85%;
   margin: auto;
     margin-top: 50px;
-
-
   background-color: white;
   padding: 20px;
   border: 2px outset darkgray;
@@ -121,7 +119,7 @@ option:hover{
   margin: auto;
   border: 1px solid black;
   padding: 10px;
-  margin-top: 4px;
+  margin-top: 0px;
 }
 .exphead{
   
@@ -232,7 +230,20 @@ option:hover{
   color: red;
 }
 
-
+.allbtns{
+  border: none;
+  padding: 7px;
+  background-color: blue;
+  color: white;
+  width: 40px;
+}
+.fot{
+    width: 100%;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    
+}
 
 
   @media screen and (max-width: 480px) {

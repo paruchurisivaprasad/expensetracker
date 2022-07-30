@@ -12,6 +12,67 @@
     text-decoration: none;
     margin-left: 40%;
 }
+
+.tdaily{
+    display: flex;
+    margin-top: -10px;
+    background-color: rgb(215, 218, 223);
+    padding: 10px;
+    
+}
+.tdailytotal{
+    margin-left: 86%;
+}
+.wdaily{
+    display: flex;
+    margin-top: -10px;
+    background-color: rgb(215, 218, 223);
+    padding: 10px;
+    
+}
+.wdailytotal{
+    margin-left: 86%;
+}
+.mdaily{
+    display: flex;
+    margin-top: -10px;
+    background-color: rgb(215, 218, 223);
+    padding: 10px;
+    
+}
+.mdailytotal{
+    margin-left: 86%;
+}
+.downloadstm{
+    border: none;
+    background-color: green;
+    color: white;
+    padding: 9px;
+    border-radius: 5px;
+}
+
+
+.dailyexpense{
+    margin-bottom: 80px;
+}
+.weeklyexpense{
+    margin-bottom: 80px;
+}
+ @media screen and (max-width: 480px) {
+  .wdailytotal{
+    margin-left: 66%;
+}
+.mdailytotal{
+    margin-left: 66%;
+}
+.tdailytotal{
+    margin-left: 66%;
+}
+#home{
+    color: white;
+    text-decoration: none;
+    margin-left: 10%;
+}
 .logout{
     color: rgba(28, 223, 74, 0.724);
     list-style: none;
@@ -21,9 +82,6 @@
     cursor: pointer;
 }
 
-.dailyexpense{
-    margin-bottom: 80px;
 }
-.weeklyexpense{
-    margin-bottom: 80px;
-}
+
+

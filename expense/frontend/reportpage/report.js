@@ -1,6 +1,14 @@
 
 let daily=document.querySelector('.dailydata');
 let weeklydata=document.querySelector('.weeklydata');
+let tdailytotal=document.querySelector('.tdailytotal');
+let wdailytotal=document.querySelector('.wdailytotal');
+let downloadstm=document.querySelector('.downloadstm');
+let mdailytotal=document.querySelector('.mdailytotal');
+
+downloadstm.addEventListener('click',()=>{
+  window.print();
+})
 
 let monthlydata=document.querySelector('.monthlydata');
 document.addEventListener('DOMContentLoaded',(e)=>{
@@ -108,10 +116,12 @@ k6+=result.data[i].amount;
         }
       }
     //   console.log(k1,k2,k3,k4,k5,k6);
+    let ktotal=k1+k2+k3+k4+k5+k6; 
+    tdailytotal.innerHTML=ktotal;
 
 
     let xValues = ["food", "fuel", "electricity", "gas", "glosaries", "others"];
-    let yValues = [k1, k2, k3, k4, k5, k6];
+    let yValues = [k1, k4, k5, k3, k2, k6];
     let barColors = ["red", "green", "blue", "orange", "yellow", "black"];
 
     new Chart("myChart", {
@@ -170,6 +180,9 @@ k6+=result.data[i].amount;
              k6 += result.data[i].amount;
            }
          }
+         let kweektotal=k1+k2+k3+k4+k5+k6;
+
+         wdailytotal.innerHTML=kweektotal;
 
          let xValues = [
            "food",
@@ -179,7 +192,7 @@ k6+=result.data[i].amount;
            "glosaries",
            "others",
          ];
-         let yValues = [k1, k2, k3, k4, k5, k6];
+         let yValues = [k1, k4, k5, k3, k2, k6];
          let barColors = [
            "red",
            "green",
@@ -246,9 +259,13 @@ for (let i = 0; i < result.data.length; i++) {
     k6 += result.data[i].amount;
   }
 }
+let mtotal=k1+k2+k3+k4+k5+k6;
+console.log();
+
+mdailytotal.innerHTML=mtotal;
 
 let xValues = ["food", "fuel", "electricity", "gas", "glosaries", "others"];
-let yValues = [k1, k2, k3, k4, k5, k6];
+let yValues = [k1, k4, k5, k3, k2, k6];
 let barColors = ["red", "green", "blue", "orange", "yellow", "black"];
 
 new Chart("myChart2", {

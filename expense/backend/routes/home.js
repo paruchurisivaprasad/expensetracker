@@ -41,11 +41,29 @@ console.log(c++);
     })
 
 });
+
 router.get("/getexpenses", aut.authenticate, (req, res) => {
   console.log(c++);
   let userid = req.user.id;
 
   Expense.findAll({ where: { userId: userid } })
+    .then((result) => {
+      res.json({ result, suc: "yes" });
+    })
+    .catch((err) => {
+      res.status(404).json(err);
+    });
+});
+
+router.get("/limitexpenses", aut.authenticate, (req, res) => {
+  console.log(c++);
+  let userid = req.user.id;
+  let page = Number(req.query.page);
+  let limit = Number(req.query.limit);
+
+  req.user.getExpenses(
+  {limit:limit,offset:limit*page}
+  )
     .then((result) => {
       res.json({ result, suc: "yes" });
     })
